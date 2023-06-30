@@ -1,0 +1,61 @@
+#section16 {
+    width: 100vw;
+    height: 200vh;
+    overflow-x: hidden;
+    .scriptMove__inner {
+        .move__bg {
+            position: relative;
+            .moveBg01 {
+                position: absolute;
+                left: 2vw;
+                top: 5vw;
+                img {
+                    width: 10vw;
+                }
+            }
+            .moveBg02 {
+                position: absolute;
+                right: 4vw;
+                top: 30vw;
+                img {
+                    width: 10vw;
+                }
+            }
+            .moveBg03 {
+                position: absolute;
+                left: 50%;
+                top: 23vw;
+                transform: translateX(-50%);
+                h2 {
+                    position: absolute;
+                    left: -3vw;
+                    top: 20vw;
+                    font-size: 3vw;
+                    font-weight: bold;
+                    color: #fff;
+                    transform: rotate(90deg);
+                    
+                }
+                img {
+                    width: 25vw;
+                }
+            }
+            .moveBg04 {
+                position: absolute;
+                left: 2vw;
+                top: 50vw;
+                img {
+                    width: 10vw;
+                }
+            }
+            .moveBg05 {
+                position: absolute;
+                right: 4vw;
+                top: 80vw;
+                img {
+                    width: 10vw;
+                }
+            }
+        }
+    }
+}
