@@ -7,7 +7,7 @@ gsap.from('.sec09__image .i3 img', {
     trigger: '#section09',
     start: 'top top',
     end: 'bottom bottom',
-    markers: true,
+    // markers: true,
     scrub: 1,
   },
 });
@@ -21,7 +21,7 @@ gsap.from('.sec09__image .i3 h2', {
     trigger: '#section09',
     start: 'top top',
     end: 'bottom bottom',
-    markers: true,
+    // markers: true,
     scrub: 1,
   },
 });

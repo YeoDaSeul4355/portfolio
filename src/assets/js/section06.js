@@ -64,7 +64,7 @@ ScrollTrigger.matchMedia({
             trigger: '.sec06__left',
             start: 'top top',
             end: '+=300',
-            markers: true,
+            // markers: true,
           },
         },
       );
@@ -78,7 +78,7 @@ ScrollTrigger.matchMedia({
         trigger: '.sec06__left',
         start: 'top top',
         end: '+=300',
-        markers: true,
+        // markers: true,
       },
     });
   },

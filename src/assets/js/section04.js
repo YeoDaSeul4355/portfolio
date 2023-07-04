@@ -107,7 +107,7 @@ ScrollTrigger.matchMedia({
         trigger: '#section04',
         start: 'top top',
         end: '+=500',
-        markers: true,
+        // markers: true,
         scrub: 1,
         opacity: 1,
       },
