@@ -1,341 +1,194 @@
 #section04 {
-    position: relative;
-    overflow: hidden;
-    height: 700vh;
+    padding: 150px 0;
+    overflow-x: hidden;
     width: 100%;
-    
-    .skill__image01 {
-        overflow-x: hidden;
-        .skillImg01 {
-            
+    height: 850vh;
+
+    .sec04__title {
+        padding: 20vw 0;
+        text-align: center;
+        font-size: 5.21vw;
+        color: var(--color__red);
+        font-family: 'OKChan';
+    }
+    .sec04__image {
+        position: relative;
+        .i1 {
             position: absolute;
-            top: 10vw;
-            left: -10vw;
-            width: 25vw;
+            left: 0vw;
+            top: 2vw;
+            width: 100vw;
         }
-        .skillImg02 {
+        .i2 {
             position: absolute;
-            top: 10vw;
-            left: 20vw;
+            left: -3vw;
+            top: 0vh;
+            width: 30vw;
+        }
+        .i3 {
+            position: absolute;
+            left: 22vw;
+            top: 15vw;
+            width: 20vw;
+            z-index: 10;
+        }
+        .i4 {
+            position: absolute;
+            left: 33vw;
+            top:-2vh;
+            width: 33vw;
+            z-index: 10;
+        }
+        .i5 {
+            position: absolute;
+            right: 25vw;
+            top: 15vw;
+            z-index: 1;
             width: 20vw;
         }
-        .skillImg03 {
+        .i6 {
             position: absolute;
-            top: 0vw;
-            right: -10vw;
-            width: 32vw;
+            right: -5vw;
+            top: 0vh;
+            width: 35vw;
         }
     }
-    .skills__inner { 
-        
-        margin: 20vw 0 0;
-        .skills__text {
-            
-            white-space: nowrap;
-            display: flex;
-
-            .infinite__item {
-                font-weight: 800;
-                text-transform: uppercase;
-                font-size: 5vw;
-                white-space: nowrap;
-                padding-right: 1vw;
-                transform: translateX(-1000px);
-            }
-        }
-
-        .skills__text02 {
-            
-            white-space: nowrap;
-            display: flex;
-
-            .infinite__item {
-                font-weight: 800;
-                text-transform: uppercase;
-                font-size: 5vw;
-                white-space: nowrap;
-                padding-right: 1vw;
-                transform: translateX(-1000px);
-            }
-        }
-        
-        .skills__text03 {
-            
-            white-space: nowrap;
-            display: flex;
-
-            .infinite__item {
-                font-weight: 800;
-                text-transform: uppercase;
-                font-size: 5vw;
-                white-space: nowrap;
-                padding-right: 1vw;
-                transform: translateX(-1000px);
-            }
-        }
-
-        .skills__text04 {
-            
-            white-space: nowrap;
-            display: flex;
-
-            .infinite__item {
-                font-weight: 800;
-                text-transform: uppercase;
-                font-size: 5vw;
-                white-space: nowrap;
-                padding-right: 1vw;
-                transform: translateX(-1000px);
-            }
-        }
-
-        .mySkill {
-            margin: 50vw 0 0;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            .left {
-                .paint {
-                    position: absolute;
-                    left: -12vw;
-                    top: 5vw;
-                    z-index: 1;
-                    img {
-                        width: 40vw;
-                    }
-                }
-                .text {
-                    position: relative;
-                    top: 23vw;
-                    z-index: 10;
-                    padding: 0 10vw;
-                    p {
-                        color: #fff;
-                        font-size: 3.33vw;
-                        font-weight: bold;
-                    }
-                    h2 {
-                        color: var(--color__yellow);
-                        font-size: 10.42vw;
-                        font-weight: bold;
-                        line-height: 115%;
-                    }
-                }
-            }
-            .right {
-                width: 50%;
-                .skill__box {
-                    padding: 8vw 0;
-            
-                    &:nth-child(even) { // 짝수
-                        text-align: right;
-                    }
-            
-                    h2 {
-                        
-                        position: relative;
-                        img {
-                            position: absolute;
-                            left: 3vw;
-                            top: 1.5vw;
-                            width: 3vw;
-                        }
-                        text-align: center;
-                        width: 50%;
-                        font-family: 'Fredoka';
-                        font-weight: bold;
-                        background-color: var(--color__yellow);
-                        display: inline-block;
-                        padding: 1.04vw 5.21vw;
-                        font-size: 3.5vw;
-                        line-height: 1;
-                        color: var(--color__red);
-                        margin-bottom: 2vw;
-                    }
-            
-                    p {
-                        font-family: 'Gowun Dodum';
-                        color: #fff;
-                        font-size: 1.25vw;
-                        width: 50%;
-                        display: inline-block;
-                    }
-                }
-            }
-            
-        }
-    }
-    
-}
-
-@media (max-width: 600px){
-    #section04 {
+    .sec04__desc {
         position: relative;
-        overflow: hidden;
-        height: 700vh;
-        width: 100%;
-        
-        .skill__image01 {
-            overflow-x: hidden;
-            .skillImg01 {
-                
-                position: absolute;
-                top: 10vw;
-                left: -10vw;
-                width: 25vw;
-            }
-            .skillImg02 {
-                position: absolute;
-                top: 10vw;
-                left: 20vw;
-                width: 20vw;
-            }
-            .skillImg03 {
-                position: absolute;
-                top: 0vw;
-                right: -10vw;
-                width: 32vw;
-            }
+        p {
+            padding: 5vw 0 0;
+            text-align: center;
+            font-size: 1.56vw;
+            font-family: 'Gowun Dodum';
+            position: absolute;
+            left: 20%;
+            top: 50vw;
+            line-height: 1.5;
         }
-        .skills__inner { 
-            
-            margin: 20vw 0 0;
-            .skills__text {
-                
-                white-space: nowrap;
-                display: flex;
-    
-                .infinite__item {
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    font-size: 7vw;
-                    white-space: nowrap;
-                    padding-right: 1vw;
-                    transform: translateX(-1000px);
-                }
-            }
-    
-            .skills__text02 {
-                
-                white-space: nowrap;
-                display: flex;
-    
-                .infinite__item {
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    font-size: 7vw;
-                    white-space: nowrap;
-                    padding-right: 1vw;
-                    transform: translateX(-1000px);
-                }
-            }
-            
-            .skills__text03 {
-                
-                white-space: nowrap;
-                display: flex;
-    
-                .infinite__item {
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    font-size: 7vw;
-                    white-space: nowrap;
-                    padding-right: 1vw;
-                    transform: translateX(-1000px);
-                }
-            }
-    
-            .skills__text04 {
-                
-                white-space: nowrap;
-                display: flex;
-    
-                .infinite__item {
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    font-size: 7vw;
-                    white-space: nowrap;
-                    padding-right: 1vw;
-                    transform: translateX(-1000px);
-                }
-            }
-    
-            .mySkill {
-                margin: 50vw 0 0;
-                display: flex;
-                justify-content: space-between;
-                position: relative;
-                .left {
-                    .paint {
-                        position: absolute;
-                        left: -12vw;
-                        top: 100vw;
-                        z-index: 1;
-                        img {
-                            width: 40vw;
-                        }
-                    }
-                    .text {
-                        position: relative;
-                        top: 120vw;
-                        z-index: 10;
-                        padding: 0 10vw;
-                        p {
-                            color: #fff;
-                            font-size: 3.33vw;
-                            font-weight: bold;
-                        }
-                        h2 {
-                            color: var(--color__yellow);
-                            font-size: 10.42vw;
-                            font-weight: bold;
-                            line-height: 115%;
-                        }
-                    }
-                }
-                .right {
-                    width: 50%;
-                    .skill__box {
-                        padding: 8vw 0;
-                
-                        &:nth-child(even) { // 짝수
-                            text-align: right;
-                        }
-                
-                        h2 {
-                            
-                            position: relative;
-                            img {
-                                position: absolute;
-                                left: 3vw;
-                                top: 1.5vw;
-                                width: 3vw;
-                            }
-                            text-align: center;
-                            width: 50%;
-                            font-family: 'Fredoka';
-                            font-weight: bold;
-                            background-color: var(--color__yellow);
-                            display: inline-block;
-                            padding: 1.04vw 5.21vw;
-                            font-size: 3.5vw;
-                            line-height: 1;
-                            color: var(--color__red);
-                            margin-bottom: 2vw;
-                        }
-                
-                        p {
-                            font-family: 'Gowun Dodum';
-                            color: #fff;
-                            font-size: 1.25vw;
-                            width: 50%;
-                            display: inline-block;
-                        }
-                    }
-                }
-                
-            }
-        }
-        
     }
+    .sec04__bgImg {
+        // display: none;
+        position: relative;
+        .bgI01 {
+          position: absolute;
+          right: -18vw;
+          top: 70vw;
+          width: 40vw;
+        }
+        .bgI02 {
+          position: absolute;
+          left: -18vw;
+          top: 100vw;
+          width: 35vw;
+        }
+    }
+}
+@media(max-width: 1600px){
+  #section04{
+    padding: 150px 0;
+    overflow-x: hidden;
+    width: 100%;
+    height: 1000vh;
+  }
+}
+@media (max-width: 800px){
+  #section04 {
+    padding: 10px 0;
+    overflow: hidden;
+    width: 100%;
+    height: 180vh;
+
+    .sec04__title {
+        padding: 15vw 0;
+        text-align: center;
+        font-size: 5.21vw;
+        color: var(--color__red);
+        font-family: 'OKChan';
+    }
+    .sec04__image {
+        position: relative;
+        padding: 10vw 0 0;
+        .i1 {
+            position: absolute;
+            left: 0vw;
+            top: 10%;
+            width: 100vw;
+        }
+        .i2 {
+            position: absolute;
+            left: -3vw;
+            top: 0vh;
+            width: 30vw;
+        }
+        .i3 {
+            position: absolute;
+            left: 22vw;
+            top: 15vw;
+            width: 20vw;
+            z-index: 10;
+            animation: bounce 0.7s infinite;
+        }
+        .i4 {
+            position: absolute;
+            left: 33vw;
+            top:-2vh;
+            width: 33vw;
+            z-index: 10;
+        }
+        .i5 {
+            position: absolute;
+            right: 25vw;
+            top: 15vw;
+            z-index: 1;
+            width: 20vw;
+            animation: bounce 0.7s infinite;
+        }
+        .i6 {
+            position: absolute;
+            right: -5vw;
+            top: 0vh;
+            width: 35vw;
+        }
+        @keyframes bounce {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+    }
+    .sec04__desc {
+        position: relative;
+        p {
+            padding: 0vw 0 0;
+            text-align: center;
+            font-size: 2.3vw;
+            font-family: 'Gowun Dodum';
+            position: absolute;
+            left: 6%;
+            top: 40vw;
+            line-height: 1.5;
+        }
+    }
+    .sec04__bgImg {
+      // display: none;
+      position: relative;
+      .bgI01 {
+        position: absolute;
+        right: -18vw;
+        top: 80vw;
+        width: 40vw;
+      }
+      .bgI02 {
+        position: absolute;
+        left: -18vw;
+        top: 100vw;
+        width: 35vw;
+      }
+    }
+  }
 }

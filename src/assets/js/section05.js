@@ -1,142 +1,127 @@
-setTimeout(() => {
-  // TweenMax.to('.myPic .myPic01', 0.02, {
-  //   rotation: '+=2',
-  //   yoyo: true,
-  //   duration: 1,
-  //   repeat: Infinity,
-  // });
-  // TweenMax.to('.myPic .myPic01', 0.02, {
-  //   rotation: '-=2',
-  //   yoyo: true,
-  //   duration: 1,
-  //   repeat: Infinity,
-  // });
+// 반응형 스티커
+ScrollTrigger.matchMedia({
+  // desktop
+  '(min-width: 800px)': function () {
+    gsap.set('.sec05__sticker .s1', { opacity: 1, scale: 1.5, rotate: 0 });
+    gsap.set('.sec05__sticker .s2', { opacity: 1, scale: 1.5, rotate: 0 });
+    gsap.set('.sec05__sticker .s3', { opacity: 1, scale: 1.5, rotate: 0 });
 
-  // TweenMax.to('.myPic .myPic02', 0.02, {
-  //   rotation: '+=2',
-  //   yoyo: true,
-  //   duration: 1,
-  //   repeat: Infinity,
-  // });
-  // TweenMax.to('.myPic .myPic02', 0.02, {
-  //   rotation: '-=2',
-  //   yoyo: true,
-  //   duration: 1,
-  //   repeat: Infinity,
-  // });
-
-  // 이미지
-  const img01 = gsap.timeline().fromTo('.myPic .myPic01', { opacity: 1, x: -200 }, { opacity: 1, x: 0 });
-
-  ScrollTrigger.create({
-    animation: img01,
-    trigger: '#section05',
-    start: 'top 10%',
-    end: '+=1500',
-    scrub: 1,
-    markers: false,
-  });
-
-  const img02 = gsap.timeline().fromTo('.myPic .myPic02', { opacity: 1, x: 200 }, { opacity: 1, x: 0 });
-
-  ScrollTrigger.create({
-    animation: img02,
-    trigger: '#section05',
-    start: 'top 10%',
-    end: '+=1500',
-    scrub: 1,
-    markers: false,
-  });
-
-  // 글씨 교차 애니메이션
-  let tl8 = gsap.timeline({ repeat: 0, repeatDelay: 0.2 });
-  let tl9 = gsap.timeline({ repeat: 0, repeatDelay: 0.5 });
-  let tl10 = gsap.timeline({ repeat: 0, repeatDelay: 0.5 });
-
-  tl8.fromTo(
-    '.skill__image02 .skills__text',
-    {
-      opacity: 0,
-      transform: 'translate3d(0, 100%, 0)',
-      transformOrigin: 'bottom',
-    },
-    {
+    gsap.to('.sec05__sticker .s1', {
+      duration: 0.1,
       opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
-      transformOrigin: 'top',
-      delay: 0.8,
-      duration: 1,
-    },
-  );
+      scale: 1,
+      rotate: -30,
+      y: '20vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
 
-  ScrollTrigger.matchMedia({
-    '(min-width: 600px)': function () {
-      //main rail 움직이기
-      gsap.to('.skill__image02 .skills__text', {
-        scrollTrigger: {
-          trigger: '.skill__image02 .infinite__item',
-          scrub: 1,
-        },
-        x: -150,
-      });
-    },
-  });
-
-  tl9.fromTo(
-    '.skill__image02 .skills__text02',
-    {
-      opacity: 0,
-      transform: 'translate3d(0, 100%, 0)',
-      transformOrigin: 'bottom',
-    },
-    {
+    gsap.to('.sec05__sticker .s2', {
+      duration: 0.1,
       opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
-      transformOrigin: 'top',
-      delay: 0.8,
-      duration: 1,
-    },
-  );
+      scale: 1,
+      rotate: 30,
+      y: '-5vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
 
-  ScrollTrigger.matchMedia({
-    '(min-width: 600px)': function () {
-      //main rail 움직이기
-      gsap.to('.skill__image02 .skills__text02', {
-        scrollTrigger: {
-          trigger: '.skill__image02 .infinite__item',
-          scrub: 1,
-        },
-        x: 150,
-      });
-    },
-  });
-
-  tl10.fromTo(
-    '.skill__image02 .skills__text03',
-    {
-      opacity: 0,
-      transform: 'translate3d(0, 100%, 0)',
-      transformOrigin: 'bottom',
-    },
-    {
+    gsap.to('.sec05__sticker .s3', {
+      duration: 0.1,
       opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
-      transformOrigin: 'top',
-      delay: 0.8,
-      duration: 1,
-    },
-  );
+      scale: 1,
+      rotate: -30,
+      y: '10vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
+  },
 
-  ScrollTrigger.matchMedia({
-    '(min-width: 600px)': function () {
-      //main rail 움직이기
-      gsap.to('.skill__image02 .skills__text03', {
-        scrollTrigger: {
-          trigger: '.skill__image02 .infinite__item',
-          scrub: 1,
-        },
-        x: -300,
-      });
-    },
-  });
+  // mobile
+  '(max-width: 799px)': function () {
+    gsap.set('.sec05__sticker .s1', { opacity: 1, scale: 1, rotate: 0 });
+    gsap.set('.sec05__sticker .s2', { opacity: 1, scale: 1, rotate: 0 });
+    gsap.set('.sec05__sticker .s3', { opacity: 1, scale: 1, rotate: 0 });
+
+    gsap.to('.sec05__sticker .s1', {
+      duration: 0.1,
+      opacity: 1,
+      scale: 1,
+      rotate: -30,
+      y: '20vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.sec05__sticker .s2', {
+      duration: 0.1,
+      opacity: 1,
+      scale: 1,
+      rotate: 30,
+      y: '-5vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.sec05__sticker .s3', {
+      duration: 0.1,
+      opacity: 1,
+      scale: 1,
+      rotate: -30,
+      y: '10vh',
+      scrollTrigger: {
+        trigger: '.sec05__sticker .s3',
+        scrub: 1,
+      },
+    });
+  },
+});
+
+// 반응형 글씨 교차 애니메이션
+ScrollTrigger.matchMedia({
+  // desktop
+  '(min-width: 800px)': function () {
+    gsap.to('.skills__text', {
+      scrollTrigger: {
+        trigger: '.infinite__item',
+        scrub: 1,
+      },
+      x: -150,
+    });
+    gsap.to('.skills__text02', {
+      scrollTrigger: {
+        trigger: '.infinite__item',
+        scrub: 1,
+      },
+      x: 150,
+    });
+  },
+
+  // mobile
+  '(max-width: 799px)': function () {
+    gsap.to('.skills__text', {
+      scrollTrigger: {
+        trigger: '.infinite__item',
+        scrub: 1,
+      },
+      x: -150,
+    });
+    gsap.to('.skills__text02', {
+      scrollTrigger: {
+        trigger: '.infinite__item',
+        scrub: 1,
+      },
+      x: 150,
+    });
+  },
 });

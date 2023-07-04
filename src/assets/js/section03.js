@@ -1,98 +1,61 @@
-// about h2 글짜 쪼개기
-let typeSplit02 = new SplitType('.about02 > h2', {
-  types: 'lines, words, chars',
-  tagName: 'span',
-});
-// about h2
-gsap.from('.about02 > h2 .line', {
-  y: '120%',
-  opacity: 0,
-  duration: 0.5,
-  ease: 'circ.out',
-  stagger: 0.3,
+ScrollTrigger.matchMedia({
+  // desktop
+  '(min-width: 800px)': function () {
+    const ani9 = gsap
+      .timeline()
+      .fromTo(
+        '.sec03__circle .circle01',
+        { xPercent: -300, borderRadius: 0, rotate: 360 },
+        { xPercent: 0, borderRadius: 500, rotate: 0 },
+        'first',
+      )
+      .fromTo(
+        '.sec03__circle .circle02',
+        { xPercent: 300, borderRadius: 0 },
+        { xPercent: 0, borderRadius: 300 },
+        'first',
+      )
+      .fromTo(
+        '.sec03__circle .circle03',
+        { xPercent: -400, borderRadius: 20 },
+        { xPercent: 0, borderRadius: 200 },
+        'second',
+      )
+      .fromTo(
+        '.sec03__circle .circle04',
+        { xPercent: 600, borderRadius: 0 },
+        { xPercent: 0, borderRadius: 100 },
+        'second',
+      )
+      .fromTo('.sec03__image .i1', { scale: 0, rotate: 360 }, { scale: 1, rotate: 0 }, 'img')
+      .from('.sec03__image .i2', { xPercent: 300 }, 'img02');
 
-  scrollTrigger: {
-    trigger: '.about02',
-    start: 'top center',
-    end: '+=800',
-    // markers: true,
-    scrub: 1,
-    opacity: 1,
+    ScrollTrigger.create({
+      animation: ani9,
+      trigger: '#section03',
+      start: 'top top',
+      end: '+=5500',
+      scrub: 1,
+      pin: true,
+      markers: false,
+      anticipatePin: 1,
+    });
   },
-});
 
-// 사진
-const ani2 = gsap.timeline();
-ani2
-  .from('.about__image02 .aboutImg04', { y: -100, autoAlpha: 0, ease: 'circ', duration: 0.5 })
-  .from('.about__image02 .aboutImg01', { y: -100, autoAlpha: 0, borderRadius: 200 })
-  .fromTo('.about__image02 .aboutImg02', { x: -100, autoAlpha: 0, rotate: 0 }, { x: 0, autoAlpha: 1, rotate: 10 })
-  .fromTo('.about__image02 .aboutImg06', { x: 100, autoAlpha: 0, rotate: 0 }, { x: 0, autoAlpha: 1, rotate: -10 })
-  .from('.about__image02 .aboutImg03', { y: 100, autoAlpha: 0, rotate: 10, ease: 'elastic' })
-  .from('.about__image02 .aboutImg05', { y: 100, autoAlpha: 0, rotate: -10, ease: 'elastic' });
+  // mobile
+  '(max-width: 799px)': function () {
+    const ani10 = gsap
+      .timeline()
+      .fromTo('.sec03__image .i1', { yPercent: 200, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1 }, 'img')
+      .fromTo('.sec03__image .i2', { xPercent: 300, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1 }, 'img');
 
-ScrollTrigger.create({
-  animation: ani2,
-  trigger: '.about__image02',
-  start: 'top top',
-  end: '+=4000',
-  scrub: 1,
-  pin: true,
-  anticipatePin: 1,
-  markers: false,
-});
-
-const mediaQuery = window.matchMedia('(max-width: 600px)');
-// about p 글짜 쪼개기
-let typeSplit03 = new SplitType('.about__image03 > p', {
-  types: 'lines, words, chars',
-  tagName: 'span',
-});
-// about p
-const aboutP = gsap.from('.about__image03 > p .line', {
-  y: '120%',
-  opacity: 0,
-  duration: 0.5,
-  ease: 'circ.out',
-  stagger: 0.1,
-
-  scrollTrigger: {
-    trigger: '.about__image03',
-    start: 'top top',
-    end: '+=500',
-    markers: false,
-    scrub: 1,
-    opacity: 1,
+    ScrollTrigger.create({
+      animation: ani10,
+      trigger: '#section03',
+      start: 'top top',
+      end: '+=180',
+      scrub: 1,
+      markers: false,
+    });
   },
-});
-
-// 사탕
-TweenMax.to('.about__image03 .aboutImg01', 0.4, {
-  x: '+=30',
-  rotation: '+=60',
-  yoyo: true,
-  duration: 0.4,
-  repeat: Infinity,
-});
-TweenMax.to('.about__image03 .aboutImg01', 0.4, {
-  x: '-=30',
-  rotation: '-=30',
-  yoyo: true,
-  duration: 0.4,
-  repeat: Infinity,
-});
-// 고양이
-TweenMax.to('.about__image03 .aboutImg02', 0.4, {
-  x: '-=60',
-  rotation: '-=60',
-  yoyo: true,
-  duration: 0.4,
-  repeat: Infinity,
-});
-TweenMax.to('.about__image03 .aboutImg02', 0.4, {
-  x: '+=30',
-  rotation: '+=30',
-  yoyo: true,
-  duration: 0.4,
-  repeat: Infinity,
 });
