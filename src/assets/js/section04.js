@@ -1,26 +1,56 @@
-// about h2 글짜 쪼개기
-let typeSplit02 = new SplitType('.sec04__title > div', {
-  types: 'lines, words, chars',
-  tagName: 'span',
-});
-// // about h2
-gsap.from('.sec04__title > div .line', {
-  y: '120%',
-  opacity: 0,
-  duration: 0.5,
-  ease: 'circ.out',
-  stagger: 0.3,
+// 반응형에서 애니메이션 따로 주기
+ScrollTrigger.matchMedia({
+  // desktop
+  '(min-width: 800px)': function () {
+    // about h2 글짜 쪼개기
+    let typeSplit02 = new SplitType('.sec04__title > div', {
+      types: 'lines, words, chars',
+      tagName: 'span',
+    });
+    // // about h2
+    gsap.from('.sec04__title > div .line', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
 
-  scrollTrigger: {
-    trigger: '#section04',
-    start: 'top center',
-    end: '+=800',
-    // markers: true,
-    scrub: 1,
-    opacity: 1,
+      scrollTrigger: {
+        trigger: '#section04',
+        start: 'top center',
+        end: '+=800',
+        // markers: true,
+        scrub: 1,
+        opacity: 1,
+      },
+    });
+  },
+
+  // mobile
+  '(max-width: 799px)': function () {
+    // about h2 글짜 쪼개기
+    let typeSplit02 = new SplitType('.sec04__title > div', {
+      types: 'lines, words, chars',
+      tagName: 'span',
+    });
+    // // about h2
+    gsap.from('.sec04__title > div .line', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
+
+      scrollTrigger: {
+        trigger: '#section04',
+        start: 'top center',
+        end: '+=800',
+        // markers: true,
+        opacity: 1,
+      },
+    });
   },
 });
-
 // 반응형에서 애니메이션 따로 주기
 ScrollTrigger.matchMedia({
   // desktop
@@ -47,25 +77,7 @@ ScrollTrigger.matchMedia({
   },
 
   // mobile
-  '(max-width: 799px)': function () {
-    const ani2 = gsap.timeline();
-    ani2
-      .from('.sec04__image .i4', { y: 0, autoAlpha: 0, ease: 'circ' }, 'ee')
-      .from('.sec04__image .i1', { y: -0, autoAlpha: 0, borderRadius: 200 }, 'ee')
-      .fromTo('.sec04__image .i2', { x: -0, autoAlpha: 0, rotate: 0 }, { x: 0, autoAlpha: 1, rotate: 10 }, 'ee')
-      .fromTo('.sec04__image .i6', { x: 0, autoAlpha: 0, rotate: 0 }, { x: 0, autoAlpha: 1, rotate: -10 }, 'ee')
-      .from('.sec04__image .i3', { y: 0, autoAlpha: 0, rotate: 10, ease: 'elastic' }, 'ee')
-      .from('.sec04__image .i5', { y: 0, autoAlpha: 0, rotate: -10, ease: 'elastic' }, 'ee');
-
-    ScrollTrigger.create({
-      animation: ani2,
-      trigger: '#section04',
-      start: 'top top',
-      end: '+=300',
-      scrub: 1,
-      markers: false,
-    });
-  },
+  '(max-width: 799px)': function () {},
 });
 
 let typeSplit03 = new SplitType('.sec04__desc > p', {
@@ -108,7 +120,6 @@ ScrollTrigger.matchMedia({
         start: 'top top',
         end: '+=500',
         // markers: true,
-        scrub: 1,
         opacity: 1,
       },
     });

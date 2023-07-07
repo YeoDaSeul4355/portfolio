@@ -31,7 +31,7 @@ ScrollTrigger.matchMedia({
 
     ScrollTrigger.create({
       animation: img01,
-      trigger: '#section07',
+      trigger: '.skill__box',
       start: 'top 10%',
       end: '+=200',
       scrub: 1,
@@ -42,7 +42,7 @@ ScrollTrigger.matchMedia({
 
     ScrollTrigger.create({
       animation: img02,
-      trigger: '#section07',
+      trigger: '.skill__box',
       start: 'top 10%',
       end: '+=200',
       scrub: 1,
@@ -95,41 +95,82 @@ let typeSplit07H2 = new SplitType('.sec07__text > h2', {
   types: 'lines, words, chars',
   tagName: 'span',
 });
-gsap.from('.sec07__text > h2 .char', {
-  y: '120%',
-  opacity: 0,
-  duration: 0.5,
-  ease: 'circ.out',
-  stagger: 0.3,
-
-  scrollTrigger: {
-    trigger: '.sec07__text',
-    start: 'top center',
-    end: '+=400',
-    // markers: true,
-    scrub: 1,
-    opacity: 1,
-  },
-});
 
 // 글씨 애니메이션2
 let typeSplit07P = new SplitType('.sec07__text > p', {
   types: 'lines, words, chars',
   tagName: 'span',
 });
-gsap.from('.sec07__text > p .word', {
-  y: '120%',
-  opacity: 0,
-  duration: 0.5,
-  ease: 'circ.out',
-  stagger: 0.3,
 
-  scrollTrigger: {
-    trigger: '.sec07__text',
-    start: 'top center',
-    end: '+=400',
-    // markers: true,
-    scrub: 1,
-    opacity: 1,
+ScrollTrigger.matchMedia({
+  '(min-width: 800px)': function () {
+    gsap.from('.sec07__text > h2 .char', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
+
+      scrollTrigger: {
+        trigger: '.sec07__text',
+        start: 'top center',
+        end: '+=400',
+        // markers: true,
+        scrub: 1,
+        opacity: 1,
+      },
+    });
+
+    gsap.from('.sec07__text > p .word', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
+
+      scrollTrigger: {
+        trigger: '.sec07__text',
+        start: 'top center',
+        end: '+=400',
+        // markers: true,
+        scrub: 1,
+        opacity: 1,
+      },
+    });
+  },
+  '(max-width: 799px)': function () {
+    gsap.from('.sec07__text > h2 .char', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
+
+      scrollTrigger: {
+        trigger: '#section07',
+        start: 'top center',
+        end: '+=400',
+        // markers: true,
+        scrub: 1,
+        opacity: 1,
+      },
+    });
+
+    gsap.from('.sec07__text > p .word', {
+      y: '120%',
+      opacity: 0,
+      duration: 0.5,
+      ease: 'circ.out',
+      stagger: 0.3,
+
+      scrollTrigger: {
+        trigger: '#section07',
+        start: 'top center',
+        end: '+=400',
+        // markers: true,
+        scrub: 1,
+        opacity: 1,
+      },
+    });
   },
 });

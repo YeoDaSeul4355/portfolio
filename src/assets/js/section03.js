@@ -51,7 +51,7 @@ ScrollTrigger.matchMedia({
 
     ScrollTrigger.create({
       animation: ani10,
-      trigger: '#section03',
+      trigger: '#section02',
       start: 'top top',
       end: '+=180',
       scrub: 1,
