@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>여다슬 포트폴리오</title>
-  <script type="module" crossorigin src="/assets/index-1bffcaf9.js"></script>
-  <link rel="stylesheet" href="/assets/index-f343c8f8.css">
+  <script type="module" crossorigin src="/assets/index-fdaee4b4.js"></script>
+  <link rel="stylesheet" href="/assets/index-083de2e5.css">
 </head>
 <body>
   <main id="main">
+    <div id="loading" class="bg-yellow">
+      <div class="loading__img">
+        <div class="loader"></div>
+        <div class="loader"></div>
+        <div class="loader"></div>
+      </div>
+      <div id="loading-text" class="fredoka">0%</div>
+    </div>
+    <!-- loading -->
+    
     <!-- 세로 -->
     <div id="vertical01"  class="bg-yellow">
       <section id="section01" class="bg-yellow">
@@ -396,7 +406,7 @@
           </div>
           <div class="site__right">
             <img class="arrow" src="data:image/png;base64,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" alt="화살표">
-            <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/site/site1" class="view" target="_blank">코드 보기</a>
+            <a href="https://github.com/YeoDaSeul4355/web_standard" class="view" target="_blank">코드 보기</a>
             <p class="desc">
               첫 번째로 만든 웹표준 사이트입니다. 커스텀 향수에 대한 설명과 향료에 대한 설명이 주로 이룹니다.사이트의 기본이 되는 슬라이드 유형, 배너 유형, 이미지 텍스트 유형, 카드 유형, 배너 유형, 텍스트 유형으로 구성하였습니다. swiper를 이용하여 이미지 슬라이드를 구현했으며 미디어 쿼리를 활용하여 반응형 
               작업까지 완료하였습니다.
@@ -420,7 +430,7 @@
           </div>
           <div class="site__right">
             <img class="arrow" src="data:image/png;base64,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" alt="화살표">
-            <a href="https://github.com/YeoDaSeul4355/Team-Project/tree/main/Users/dsy19/AppData/Roaming/Code/User/globalStorage/humy2833.ftp-simple/remote-workspace-temp/da8e4252b100e46b44f996c563a77bf5/html/php" class="view" target="_blank">코드 보기</a>
+            <a href="https://github.com/YeoDaSeul4355/php_blog" class="view" target="_blank">코드 보기</a>
             <p class="desc">
               php를 처음 접하면서 만든 블로그 컨셉 사이트입니다.
               MYSQL을 배우면서 데이터를 전달하고 출력하는 과정을 알아가는 시간이였습니다.
@@ -447,7 +457,7 @@
           </div>
           <div class="site__right">
             <img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABsCAYAAABtuky0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAq5SURBVHgB7V1rUuNIEs4sATsNzDZ9ghEnGDhBixMMfYK2TzDwd2N2sJmN/TtwApsTtPsEmBO05wSjPQE9sbDQgFSbqWdJtvFDD0tyfREEUulB4M9ZmZWvQsgRvc6DCS8vJiCa3kD4W4WUtvfj4lfYerbbnXdfQWMuICyIXud2D542TTDggJ4+QBQ/0PAB/ZiwHEb0Y0vXvQEHhu1/745AYyJmkuVJi+NYKIz3JBZMygEUC1tK9zOI5wuSOhs0IoyR1fvlvxZNXwcoBJNj0S17MCeklP+h+206soMhe8JtJt1DP3IPEX+E1zGQjnPZ/tf3Q9Dwyer98+6EyPnJl5zZ5PikwBBQjohYG0CM2p03NiyBXufOl1YXjxHh/ZS/P5T4rb3ukoZEVIuI6k2/RX6VEm6IGCLHIH3yHRGDhRkFvc79MbjQIqn7afyq7Et86q4raUjf7BbKmKyk1BiDZSUmKzxd6bodIu1j6hIbI932b7t9WDP40yARRpYYgGEMV0XONEwjDaXsfDzf6cIaYWHTfVUIZoAzSC4RRqTLPqzLtFgbshhTpMwmwo7WgbBakRWCjJAOSjxThtaCsFqSxWCrESX0FFO/8YTVliwGr9FIwq7XhbBak8VYJ8JqTxZjCmGHTfPoC2gA2p1dMuHFB2XIRPm3HjQMjSCLQYt58h+6bWXo+OrX+zNoEBoxDapIm/XktT9qite+cWQx+mcP1354h0GOaHzab4L+asw0qELiI+sv2z/Dvabor0ZKFoNcUxY5e6/D8yZMh42ULIZncEj3MjxHw6i9dDWWLA/iucM6KzgzOdAKNUazyYLv9iiY+jk8o4h4rU35RuksTvYRQryXiNaMfJIRXR9JBz7DxtOwLpZiA3yDt3vC3fqZCGrB0rmL9cjtqHGIJCQJTqZLkJfs8xenx/mZU7NQbdLqGXyk6S6w7szkFSYHr0DIIcD2UM3CSi6UYSDBvaEFWWtS7mJV8ztqFta/5QUuGwknqUs2ffiXgDv9aWlyqZS7Yau7feS/845zFk8mZlFVLNRSo4SZW/akf4JE+jZJEshuu7t7McfzTPRt9CR+e6caFpzfQRKVej/d57qn7d9mv78M1MJ0D4hib4T6QQ4kbu/PQxTDJwaH8YhhJa+/sUnaDiXAqbI2Y3P/96p47ytPlkKUGY7RlHdKH+yHRTODpXT+iE5cYU26p93dvqDY2CEoefpkaXb6Z3e/w4pRfclyNzsQEcUedDyaV5rGIEEpJ0Jz2m0sZRxppsNBPCpO+mf3K3VZVZoszxmLIlL8EuUp+/xgWRjGMDycVcHC0yZLL/1NxSrE1iolrNJkoQRFVyBZelnz2x/VadOc54l2Z6eTJEycrEqHVZYs1lXKuoikCjKve1hagsKL4G88mPM9R4QpHnzWYVwmBSWjupLlbiofBkvVagsm2ue7J0TYVXjOVmJQW1YaKksWohHpFInPnyEnkK66jc+cuas6PYhn/gJFRgpK8cmfAcpBhXVWPAXShzqE3KCY+y9yIbK8aRTxgxojKzNloJJkJXWJ/FqlEIZv1idyFK2y9FdVJcsMD8gg+ANyBOmd/ehkY8OGJTCWMiDwrIzpsOGR4nFQqORtfPa4tMSywQGR/iong2qtyPIariixr6zTa0p/FT4dVpQsJ3akIr6F3LBpxsdyBBnh6y9IT4eLWZgLoKJkGco3HvP751/QDA9JF/4FOYAXzJBIKN0qzB1VSbJSC2Azt2+rUJcDargkG2g6VAoisOV16SkAldVZqlsIXjZy8RSoC20QTuZpMITvXI7JR8MoxHdYZQNjGB0hZibLl86iFtqe71ItN7KKkK7qkiU56cWH31cqI162rPjV7k3eC23f2Ii980VIV3XJMp6VwB99U7PqLSGPo2OpBhXzxNNFwpTPWboqS9ZYzoS7sfQaxksNUIKYFIQshCzfdwhqMUSu0lXpRbEEJ85TR/EzLAtn01LeOio23FKcdFXbg4HP/fgfx71lq0DUggTSK5dQIIqUrkqTNfaP04e+qO4KCDaDUxvguSB9pUL0lZPcpKsGvsHEtELxo82FvqnJMh8spWLEn2YVfSvwGHJA5cnypUuexiPi5Kr78HGeZ+k+teWdnUcex7xQ/xanZufhhamF1z3IaoqmL+m6F7PyH+jDOZCu7ETPSOeqzDyOpFeD/JvOZgsyojYhEm5oDAmHKV5PC0l4VSZy61oZstvn33egZCSs2RwW9rVrDhlU4JvK8FA6ZOG50qaF7x7ph1ZiTeVNf3i0iuwovxhi688wcpC1Y0Ctgo++Swe5VMdWhi008BNuii9kJl9XhSiGn6eIN9GAAAsyoHaR4jAPXc2BmARub75KoiIIvAgPMy3soWbTYBp+z1zJeouMDWnSbzbLRyBEP1NOfM7on93f5jEVbkCNEUhNoXkPeYBic1dkvvtS5a+5hrAE1i67aSUQseOYpsKlrUJNVil4HCU63cxZEJGGJqsE+FYhxFah4yzlftJklQXMHvnWZJUFL9wTQh4s4yvUZJWEZCEfmfFLZGxpskqFjGNpS3gzNFllQukWgGjM0UsqCU1WmVC6BQSbnS4ETVaJ8D0uSk7JgustTVbJSK23LFgAmqzSEW0LzG70haZCTVbZmLMl0SRossqGoVqEMzfVTkCTVTqe7fh4sdYOmqyS4ectLmcRarJWAt7iPsTkLje9f9wdpDN5G7sXSZXR+/W+H/bk5bau4FDk2CDLkKxDCk7+4Bf9BWkASttXTVbJCHr1ci9ea4HHBpw3qckqCUF7c07ntmAJkIS1a50wUwf0frk/RsNLlrFgMbCHXqnWlLYmqwDM2s2B+1G9ssYaScRTcB3OLI4GOX1Nk5UTvMjvyxZNdRSyl+4xfeApksLdHJwBgsFh/R/HriNcBk1QoH/2v6gXFBes829NVkZEmwNIsuYMHpGQtNtkUBAo+kK6H6UUbFxMMNcFTXvOwH/n3QG9xoxf4VfQ6HVWVrhbbFaPOWS99G1wT3mjAOFydaz7hXvrwvRNblooxZeAKCtxyfCTQjVZmaF40cGrWe56Ofbn2xbg8wDlwwyS0nDNYJoMYfOm2XygycoKYVwktsOQ8m2YZx+sp0xYCJtEjKtIalzuqsnKCK+qBTDZ9z0ooyWr7x0sBOz77qdYChPlrqCRC8h6YykK1kVsVMgjbsVHksZWnTXPO2i63Ofocbh1lNe26Hw3elZLVk4YL6Nlq+8ReJ8uia5ybcrzZIywlKa7C6j3aLJyQtBGXK3K9HYnYtOeC9gnVGxG8CSou3vBe6+AquNSbfY0WTnCr8p0033fuVH/XrA/1z6T5v/IqN2472knkNci+cbNBFlaZxUAWivxmkntRh1tWxjfo+6UxzruaV/dOY/HWt2dhIGiJasAeNOet8NdBCu991ay043XJyNRBjSpn70mqyD4O9wl995Kb+WktpYlwyJVHD7ew1eTVSAW3Mop6bJy3WH6Bk1WwZi0lVO4aCbD4s+pD268jNJDmqwykNrKaVbvqWk9fDVZJSDeyinZe2pq3qCA/uRhjVIw3srI8/9NkS61NCiGJqtETOk9lYCUTndaCyNNVskICeOuMxMuD15rtafJWgGYsPb5Tiu1cCbT/uXqtec0WasEfusrfkSKCP998NrtmqwVwrcSxSEncEp8czjr/v8D54IR4UzuU0AAAAAASUVORK5CYII=" alt="화살표">
-            <a href="https://github.com/YeoDaSeul4355/Team-Project/tree/main/Users/dsy19/AppData/Roaming/Code/User/globalStorage/humy2833.ftp-simple/remote-workspace-temp/da8e4252b100e46b44f996c563a77bf5/html/php2" class="view" target="_blank">코드 보기</a>
+            <a href="https://github.com/YeoDaSeul4355/php_team" class="view" target="_blank">코드 보기</a>
             <p class="desc">
               php를 기반으로 진행한 협력 프로젝트입니다.
               학생을 비롯해 독해력을 키우고 싶은 사람들을 위한 문학/비문학 문제 풀이 사이트
@@ -581,8 +591,32 @@
       <section id="horizon" class="bg-purple">
         <div class="site__bg"></div>  
         <div class="site__title">
-          <h2>스터디 사이트</h2>
+          <h2>자동차 카탈로그 사이트</h2>
           <em class="number bounce">09</em>
+        </div>
+        <div class="site__cont">
+          <div class="site__left">
+            <a href="https://car-showcase-jjul.netlify.app/" class="view" target="_blank">사이트 보기</a>
+            <img class="arrow" src="data:image/png;base64,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" alt="화살표">
+          </div>
+          <div class="site__img">
+            <img src="/assets/car_showcase-8bc1f1a7.png" alt="자동차 사이트">
+          </div>
+          <div class="site__right">
+            <img class="arrow" src="data:image/png;base64,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" alt="화살표">
+            <a href="https://github.com/YeoDaSeul4355/car_showcase" class="view" target="_blank">코드 보기</a>
+            <p class="desc">
+              자동차 API를 활용해 제작한 사이트입니다. Next.js로 제작하였으며 TypeScript, Tailwind.css, Post.css등등 다양한 스택을 포함하고 있습니다. 고급 검색 기능 구현과 필터링 기능 생성,
+              메타데이터 및 SEO 최적화 등등 여러가지 기능을 구현하여 만든 사이트입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="horizon" class="bg-purple">
+        <div class="site__bg"></div>  
+        <div class="site__title">
+          <h2>스터디 사이트</h2>
+          <em class="number bounce">10</em>
         </div>
         <div class="site__cont">
           <div class="site__left">
@@ -714,7 +748,7 @@
                   </div>
                   <div class="link">
                     <a href="https://yeodaseul4355.github.io/web2023/javascirpt/parallax/gsap01.html" target="_blank"><span>사이트보기</span></a>
-                    <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/javascirpt/parallax" target="_blank"><span>코드 보기</span></a>
+                    <a href="https://github.com/YeoDaSeul4355/ParallaxEffect" target="_blank"><span>코드 보기</span></a>
                   </div>
                 </div>
               </div>
@@ -748,7 +782,7 @@
                     </div>
                   <div class="link">
                     <a href="https://yeodaseul4355.github.io/web2023/javascirpt/mouse/mouseEffect01.html" target="_blank"><span>사이트보기</span></a>
-                    <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/javascirpt/mouse" target="_blank"><span>코드 보기</span></a>
+                    <a href="https://github.com/YeoDaSeul4355/MouseEffect" target="_blank"><span>코드 보기</span></a>
                   </div>
                 </div>
               </div>
@@ -782,7 +816,7 @@
                   </div>
                   <div class="link">
                     <a href="https://yeodaseul4355.github.io/web2023/javascirpt/quiz/quizEffect01.html" target="_blank"><span>사이트보기</span></a>
-                    <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/javascirpt/quiz" target="_blank"><span>코드 보기</span></a>
+                    <a href="https://github.com/YeoDaSeul4355/QuizEffect" target="_blank"><span>코드 보기</span></a>
                   </div>
                 </div>
               </div>
@@ -816,7 +850,7 @@
                     </div>
                   <div class="link">
                     <a href="https://yeodaseul4355.github.io/web2023/javascirpt/slider/sliderEffect01.html" target="_blank"><span>사이트보기</span></a>
-                    <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/javascirpt/slider" target="_blank"><span>코드 보기</span></a>
+                    <a href="https://github.com/YeoDaSeul4355/SlideEffect" target="_blank"><span>코드 보기</span></a>
                   </div>
                 </div>
               </div>
@@ -850,7 +884,7 @@
                   </div>
                   <div class="link">
                     <a href="https://yeodaseul4355.github.io/web2023/javascirpt/search/searchEffect01.html" target="_blank"><span>사이트보기</span></a>
-                    <a href="https://github.com/YeoDaSeul4355/web2023/tree/main/javascirpt/search" target="_blank"><span>코드 보기</span></a>
+                    <a href="https://github.com/YeoDaSeul4355/SearchEffect" target="_blank"><span>코드 보기</span></a>
                   </div>
                 </div>
               </div>
@@ -861,13 +895,116 @@
             </div>
           </div>
         </div>
-        <div class="sec10__bgImg02">
+        
+      </section>
+
+      <section id="section11" class="bg-purple">
+        <div class="sec11__bgImg01">
+          <img src="/assets/bgpurple-765c6670.png" alt="배경이미지">
+        </div>
+        <div class="sec11__title">
+          <h2 class="fredoka">Work List</h2>
+          <p class="gowun">작업물을 목록형으로 확인해보세요!</p>
+        </div>
+        <div class="sec11__cont">
+          <div class="list">
+            <div class="h3">웹 표준 사이트</div>
+            <div class="list__box">
+              <a href="https://github.com/YeoDaSeul4355/web_standard" target="_blank">
+                웹표준
+              </a>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">클론 코딩 사이트</div>
+            <div class="list__box">
+              <a href="https://github.com/YeoDaSeul4355/clone_emart24" target="_blank">
+                클론
+              </a>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">PHP 사이트</div>
+            <div class="list__box">
+              <a href="https://github.com/YeoDaSeul4355/php_blog" target="_blank">
+                PHP1
+              </a>
+              <a href="https://github.com/YeoDaSeul4355/php_team" target="_blank">
+                PHP2
+              </a>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">React / Vue / Next</div>
+            <div class="list__box">
+              <a href="https://github.com/YeoDaSeul4355/site2023-react01" target="_blank">
+                React
+              </a>
+              <a href="https://github.com/YeoDaSeul4355/site2023-vue01" target="_blank">
+                Vue
+              </a>
+              <a href="https://github.com/YeoDaSeul4355/site2023-next01" target="_blank">
+                Next
+              </a>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">React 사이트</div>
+            <div class="list__box">
+              <a href="https://github.com/YeoDaSeul4355/site2023-youtube01" target="_blank">
+                Youtube
+              </a>
+              <a href="https://github.com/YeoDaSeul4355/car_showcase" target="_blank">
+                카탈로그
+              </a>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">자바스크립트 이펙트</div>
+            <div class="list__box">
+              <div class="top">
+                <a href="https://github.com/YeoDaSeul4355/gameEffect" target="_blank">
+                  게임
+                </a>
+                <a href="https://github.com/YeoDaSeul4355/ParallaxEffect" target="_blank">
+                  패럴랙스
+                </a>
+                <a href="https://github.com/YeoDaSeul4355/MouseEffect" target="_blank">
+                  마우스
+                </a>
+              </div>
+              <div class="bottom">
+                <a href="https://github.com/YeoDaSeul4355/SlideEffect" target="_blank">
+                  슬라이드
+                </a>
+                <a href="https://github.com/YeoDaSeul4355/QuizEffect" target="_blank">
+                  퀴즈
+                </a>
+                <a href="https://github.com/YeoDaSeul4355/SearchEffect" target="_blank">
+                  서치
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="h3">STUDY 사이트</div>
+            <div class="list__box">
+              <a href="https://duektmf34.tistory.com/" target="_blank">
+                Blog
+              </a>
+              <a href="https://github.com/YeoDaSeul4355/web2023" target="_blank">
+                Study
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="sec11__bgImg02">
           <img src="/assets/bgImg-78b89977.png" alt="배경이미지">
         </div>
       </section>
 
-      <section id="section11" class="bg-black">
-        <div class="sec11__left">
+      <section id="section12" class="bg-black">
+        <div class="sec12__left">
           <div class="title">
             <h2 class="name">YEO DA SEUL</h2>
             <p>010 4355 7340</p>
@@ -892,7 +1029,7 @@
             </div>
           </div>
         </div>
-        <div class="sec11__right">
+        <div class="sec12__right">
           <div class="title">
             <h2>CONTACT ME!</h2>
             <div>thank you for viewing</div>

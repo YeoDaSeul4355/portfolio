@@ -8,7 +8,11 @@
 .section {
     padding: 100px 0;
 }
-
+#main {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
 /* blind 효과 */
 .blind {
     position: absolute;
